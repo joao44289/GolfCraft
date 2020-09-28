@@ -4,10 +4,13 @@ loaderVersion="[31,)"
 [[mods]]
 modId="golf_it"
 version="1.0.0"
-displayName="Golf It"
+displayName="GolfCraft"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="Jo"
+displayURL="https://github.com/joao44289/GolfCraft"
+authors="joao44289"
+description='''
+A bad attempt at a minecraft gold mod.
+'''
 
 [[dependencies.golf_it]]
     modId="minecraft"
