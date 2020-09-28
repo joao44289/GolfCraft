@@ -1,0 +1,11 @@
+{
+  "_fv": 10,
+  "_type": "tab",
+  "definition": {
+    "name": "Golf It!",
+    "icon": {
+      "value": "CUSTOM:GolfClub"
+    },
+    "showSearch": false
+  }
+}
