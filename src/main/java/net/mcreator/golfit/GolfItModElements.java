@@ -47,6 +47,7 @@ public class GolfItModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public GolfItModElements() {
+		sounds.put(new ResourceLocation("golf_it", "ballhit"), new net.minecraft.util.SoundEvent(new ResourceLocation("golf_it", "ballhit")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("golf_it").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

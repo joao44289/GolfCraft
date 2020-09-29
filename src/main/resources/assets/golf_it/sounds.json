@@ -1,1 +1,11 @@
-{}
+{
+  "ballhit": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "golf_it:glfswng",
+        "stream": false
+      }
+    ]
+  }
+}

@@ -136,14 +136,84 @@
           }
         ]
       }
+    },
+    {
+      "name": "GolfClubRangedBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_club_ranged_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GolfClubRanged",
+      "type": "gun",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_club_ranged"
+    },
+    {
+      "name": "GolfClubRangedCanUseRangedItem",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_club_ranged_can_use_ranged_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "ballhit",
+      "file": "glfswng",
+      "category": "master"
+    }
+  ],
   "language_map": {
     "en_us": {
       "itemGroup.tabgolf": "Golf It!",
       "item.golf_it.golf_ball": "Golf Ball",
+      "item.golf_it.golf_club_ranged": "Golf Club Ranged",
       "item.golf_it.golf_club": "Golf Club",
       "block.golf_it.golf_ball_block": "Golf Ball Block",
       "block.golf_it.golf_hole": "Golf Hole"
