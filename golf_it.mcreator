@@ -98,6 +98,44 @@
           }
         ]
       }
+    },
+    {
+      "name": "GolfHole",
+      "type": "block",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_hole"
+    },
+    {
+      "name": "BallOnHole",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ball_on_hole",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -107,7 +145,8 @@
       "itemGroup.tabgolf": "Golf It!",
       "item.golf_it.golf_ball": "Golf Ball",
       "item.golf_it.golf_club": "Golf Club",
-      "block.golf_it.golf_ball_block": "Golf Ball Block"
+      "block.golf_it.golf_ball_block": "Golf Ball Block",
+      "block.golf_it.golf_hole": "Golf Hole"
     }
   },
   "workspaceSettings": {

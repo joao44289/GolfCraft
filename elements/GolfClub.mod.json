@@ -12,7 +12,7 @@
     "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
-    "toolType": 1.0,
+    "toolType": 0.0,
     "damageCount": 0,
     "destroyAnyBlock": false,
     "stayInGridWhenCrafting": false,
@@ -24,8 +24,8 @@
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
-    "inventorySize": 9,
-    "inventoryStackSize": 64,
+    "inventorySize": 1,
+    "inventoryStackSize": 1,
     "onRightClickedOnBlock": {
       "name": "GolfClubRightClickedOnBlock"
     }
