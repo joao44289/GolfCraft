@@ -66,10 +66,24 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 		((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putDouble("blockZ", z);
 		{
 			Entity _ent = entity;
-			_ent.setPositionAndUpdate((x - 3), y, z);
+			_ent.setPositionAndUpdate(x, (y + 1), z);
 			if (_ent instanceof ServerPlayerEntity) {
-				((ServerPlayerEntity) _ent).connection.setPlayerLocation((x - 3), y, z, _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+				((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 			}
+		}
+		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+			world.getWorld().getServer().getCommandManager()
+					.handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/effect give @a minecraft:slowness 999 255");
+		}
+		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+			world.getWorld().getServer().getCommandManager()
+					.handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/effect give @a minecraft:jump_boost 999 137");
 		}
 	}
 }
