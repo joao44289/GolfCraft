@@ -201,7 +201,14 @@
       }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "isWater",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    }
+  ],
   "sound_elements": [
     {
       "name": "ballhit",

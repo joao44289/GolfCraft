@@ -1,20 +1,18 @@
 package net.mcreator.golfit.procedures;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
+import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -53,37 +51,47 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
-			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-				world.getWorld().getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-						"/title @a actionbar {\"text\":\"Congratulations!\", \"bold\":true, \"color\":\"red\"}");
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).clearActivePotions();
+			{
+				Entity _ent = entity;
+				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+							"/title @s actionbar {\"text\":\"Congratulations!\", \"bold\":true, \"color\":\"red\"}");
+				}
 			}
-		}
-		world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
-		((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putDouble("blockX", x);
-		((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putDouble("blockY", y);
-		((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putDouble("blockZ", z);
-		{
-			Entity _ent = entity;
-			_ent.setPositionAndUpdate(x, (y + 1), z);
-			if (_ent instanceof ServerPlayerEntity) {
-				((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+		} else {
+			if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WATER.getDefaultState().getBlock())) {
+				GolfItModVariables.isWater = (boolean) (true);
+				{
+					Entity _ent = entity;
+					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+						_ent.world.getServer().getCommandManager().handleCommand(
+								_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+								"/title @s actionbar {\"text\":\"Try again\", \"bold\":true, \"color\":\"blue\"}");
+					}
+				}
+			} else {
+				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.putDouble("blockX", x);
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.putDouble("blockY", y);
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.putDouble("blockZ", z);
+				{
+					Entity _ent = entity;
+					_ent.setPositionAndUpdate(x, (y + 1), z);
+					if (_ent instanceof ServerPlayerEntity) {
+						((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
+								Collections.emptySet());
+					}
+				}
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 255, (int) 999));
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 137, (int) 999));
 			}
-		}
-		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-			world.getWorld().getServer().getCommandManager()
-					.handleCommand(
-							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/effect give @a minecraft:slowness 999 255");
-		}
-		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-			world.getWorld().getServer().getCommandManager()
-					.handleCommand(
-							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/effect give @a minecraft:jump_boost 999 137");
 		}
 	}
 }
