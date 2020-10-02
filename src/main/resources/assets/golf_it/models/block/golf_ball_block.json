@@ -1,7 +1,8 @@
 {
-  "parent": "block/cube_all",
+  "parent": "golf_it:custom/golfball",
   "textures": {
-    "all": "golf_it:blocks/golfballblock",
-    "particle": "golf_it:blocks/golfballblock"
+    "all": "golf_it:blocks/white",
+    "particle": "golf_it:blocks/white",
+    "0": "golf_it:blocks/white"
   }
 }

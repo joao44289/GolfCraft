@@ -2,18 +2,18 @@
   "_fv": 10,
   "_type": "block",
   "definition": {
-    "texture": "golfballblock",
+    "texture": "white",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
     "textureRight": "",
     "textureBack": "",
-    "renderType": 11,
-    "customModelName": "Single texture",
+    "renderType": 2,
+    "customModelName": "golfball:default",
     "rotationMode": 0,
     "emissiveRendering": false,
     "itemTexture": "",
-    "hasTransparency": false,
+    "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "mx": 0.0,
@@ -39,7 +39,7 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canProvidePower": false,
-    "lightOpacity": 255,
+    "lightOpacity": 0,
     "material": {
       "value": "MISCELLANEOUS"
     },
@@ -59,7 +59,7 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "ANVIL"
+      "value": "CLOTH"
     },
     "luminance": 0.0,
     "unbreakable": false,
@@ -88,9 +88,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onBlockAdded": {
-      "name": "BallOnHole"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [
