@@ -1,7 +1,9 @@
 {
-  "parent": "block/cube_all",
+  "parent": "golf_it:custom/golfhole",
   "textures": {
     "all": "golf_it:blocks/golfhole",
-    "particle": "golf_it:blocks/golfhole"
+    "particle": "golf_it:blocks/golfhole",
+    "0": "golf_it:blocks/greenhole",
+    "missing": "golf_it:blocks/greyhole"
   }
 }

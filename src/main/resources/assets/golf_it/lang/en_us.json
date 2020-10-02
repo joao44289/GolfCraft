@@ -1,7 +1,7 @@
 {
   "itemGroup.tabgolf": "Golf It!",
   "item.golf_it.golf_ball": "Golf Ball",
-  "item.golf_it.golf_club_ranged": "Golf Club Ranged",
+  "item.golf_it.golf_club_ranged": "Golf Club ",
   "block.golf_it.golf_ball_block": "Golf Ball Block",
   "block.golf_it.golf_hole": "Golf Hole"
 }

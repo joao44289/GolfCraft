@@ -99,6 +99,32 @@
           }
         ]
       }
+    },
+    {
+      "name": "GiveClubCommandExecuted",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "give_club_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GiveClub",
+      "type": "command",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "give_club"
     }
   ],
   "variable_elements": [
@@ -120,7 +146,7 @@
     "en_us": {
       "itemGroup.tabgolf": "Golf It!",
       "item.golf_it.golf_ball": "Golf Ball",
-      "item.golf_it.golf_club_ranged": "Golf Club Ranged",
+      "item.golf_it.golf_club_ranged": "Golf Club ",
       "block.golf_it.golf_ball_block": "Golf Ball Block",
       "block.golf_it.golf_hole": "Golf Hole"
     }
