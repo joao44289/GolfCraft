@@ -11,15 +11,6 @@
       "registry_name": "golf"
     },
     {
-      "name": "GolfClub",
-      "type": "item",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "golf_club"
-    },
-    {
       "name": "GolfBall",
       "type": "item",
       "sortid": 4,
@@ -38,68 +29,6 @@
       "registry_name": "golf_ball_block"
     },
     {
-      "name": "GolfBallRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "golf_ball_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "GolfClubRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "golf_club_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "GolfHole",
       "type": "block",
       "sortid": 7,
@@ -107,35 +36,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "golf_hole"
-    },
-    {
-      "name": "BallOnHole",
-      "type": "procedure",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ball_on_hole",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "GolfClubRangedBulletHitsBlock",
@@ -221,7 +121,6 @@
       "itemGroup.tabgolf": "Golf It!",
       "item.golf_it.golf_ball": "Golf Ball",
       "item.golf_it.golf_club_ranged": "Golf Club Ranged",
-      "item.golf_it.golf_club": "Golf Club",
       "block.golf_it.golf_ball_block": "Golf Ball Block",
       "block.golf_it.golf_hole": "Golf Hole"
     }

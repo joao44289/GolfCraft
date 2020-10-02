@@ -14,7 +14,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.golfit.procedures.BallOnHoleProcedure;
 import net.mcreator.golfit.itemgroup.GolfItemGroup;
 import net.mcreator.golfit.GolfItModElements;
 
@@ -62,7 +61,6 @@ public class GolfBallBlockBlock extends GolfItModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				BallOnHoleProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

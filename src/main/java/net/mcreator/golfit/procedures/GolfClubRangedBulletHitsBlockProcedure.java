@@ -12,7 +12,6 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
-import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -62,7 +61,6 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 			}
 		} else {
 			if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.WATER.getDefaultState().getBlock())) {
-				GolfItModVariables.isWater = (boolean) (true);
 				{
 					Entity _ent = entity;
 					if (!_ent.world.isRemote && _ent.world.getServer() != null) {

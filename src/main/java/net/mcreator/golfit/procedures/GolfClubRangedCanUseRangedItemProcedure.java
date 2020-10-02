@@ -7,7 +7,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -29,17 +28,13 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((GolfItModVariables.isWater) == (true))) {
-			GolfItModVariables.isWater = (boolean) (false);
-		} else {
-			world.setBlockState(new BlockPos(
-					(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.getDouble("blockX")),
-					(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.getDouble("blockY")),
-					(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.getDouble("blockZ"))),
-					Blocks.AIR.getDefaultState(), 3);
-		}
+		world.setBlockState(new BlockPos(
+				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.getDouble("blockX")),
+				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.getDouble("blockY")),
+				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+						.getDouble("blockZ"))),
+				Blocks.AIR.getDefaultState(), 3);
 	}
 }

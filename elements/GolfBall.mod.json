@@ -23,9 +23,6 @@
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
-    "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
-      "name": "GolfBallRightClickedOnBlock"
-    }
+    "inventoryStackSize": 64
   }
 }

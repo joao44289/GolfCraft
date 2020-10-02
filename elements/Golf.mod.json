@@ -4,7 +4,7 @@
   "definition": {
     "name": "Golf It!",
     "icon": {
-      "value": "CUSTOM:GolfClub"
+      "value": "CUSTOM:GolfClubRanged"
     },
     "showSearch": false
   }
