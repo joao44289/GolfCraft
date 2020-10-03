@@ -1,0 +1,9 @@
+{
+  "parent": "golf_it:custom/golfflag",
+  "textures": {
+    "all": "golf_it:blocks/redflag",
+    "particle": "golf_it:blocks/redflag",
+    "0": "golf_it:blocks/brownpole",
+    "1": "golf_it:blocks/redflag"
+  }
+}
