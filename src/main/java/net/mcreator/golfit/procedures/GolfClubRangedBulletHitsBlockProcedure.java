@@ -86,9 +86,9 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					}
 				}
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 255, (int) 999));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 137, (int) 999));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
 			}
 		}
 	}

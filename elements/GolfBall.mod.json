@@ -9,10 +9,10 @@
     "creativeTab": {
       "value": "CUSTOM:Golf"
     },
-    "stackSize": 1,
+    "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
-    "toolType": 0.0,
+    "toolType": 1.0,
     "damageCount": 0,
     "destroyAnyBlock": false,
     "stayInGridWhenCrafting": false,

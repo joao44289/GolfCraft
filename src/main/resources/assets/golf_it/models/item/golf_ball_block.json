@@ -1,22 +1,6 @@
 {
-  "parent": "golf_it:block/golf_ball_block",
-  "display": {
-    "thirdperson": {
-      "rotation": [
-        10,
-        -45,
-        170
-      ],
-      "translation": [
-        0,
-        1.5,
-        -2.75
-      ],
-      "scale": [
-        0.375,
-        0.375,
-        0.375
-      ]
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "golf_it:items/golf_ball"
   }
 }

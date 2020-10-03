@@ -11,15 +11,6 @@
       "registry_name": "golf"
     },
     {
-      "name": "GolfBall",
-      "type": "item",
-      "sortid": 4,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "golf_ball"
-    },
-    {
       "name": "GolfBallBlock",
       "type": "block",
       "sortid": 5,
@@ -134,6 +125,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "golf_flag"
+    },
+    {
+      "name": "GolfBall",
+      "type": "item",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_ball"
     }
   ],
   "variable_elements": [

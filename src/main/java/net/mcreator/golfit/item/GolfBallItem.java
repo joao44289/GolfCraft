@@ -15,7 +15,7 @@ public class GolfBallItem extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:golf_ball")
 	public static final Item block = null;
 	public GolfBallItem(GolfItModElements instance) {
-		super(instance, 4);
+		super(instance, 13);
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class GolfBallItem extends GolfItModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(GolfItemGroup.tab).maxStackSize(1));
+			super(new Item.Properties().group(GolfItemGroup.tab).maxStackSize(64));
 			setRegistryName("golf_ball");
 		}
 
@@ -40,7 +40,7 @@ public class GolfBallItem extends GolfItModElements.ModElement {
 
 		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 0F;
+			return 1F;
 		}
 	}
 }
