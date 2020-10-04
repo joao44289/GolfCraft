@@ -134,6 +134,48 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "golf_ball"
+    },
+    {
+      "name": "GolfClubSand",
+      "type": "gun",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_club_sand"
+    },
+    {
+      "name": "GolfClubSandBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golf_club_sand_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -154,6 +196,7 @@
   "language_map": {
     "en_us": {
       "itemGroup.tabgolf": "Golf It!",
+      "item.golf_it.golf_club_sand": "Golf Club Sand",
       "item.golf_it.golf_ball": "Golf Ball",
       "item.golf_it.golf_club_ranged": "Golf Club ",
       "block.golf_it.golf_flag": "Golf Flag",

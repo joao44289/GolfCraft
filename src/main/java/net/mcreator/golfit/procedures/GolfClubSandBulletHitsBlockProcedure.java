@@ -11,7 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.golfit.item.GolfClubSandItem;
+import net.mcreator.golfit.item.GolfClubRangedItem;
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
 import net.mcreator.golfit.GolfItModElements;
@@ -20,30 +20,30 @@ import java.util.Map;
 import java.util.Collections;
 
 @GolfItModElements.ModElement.Tag
-public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.ModElement {
-	public GolfClubRangedBulletHitsBlockProcedure(GolfItModElements instance) {
-		super(instance, 9);
+public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModElement {
+	public GolfClubSandBulletHitsBlockProcedure(GolfItModElements instance) {
+		super(instance, 16);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure GolfClubRangedBulletHitsBlock!");
+			System.err.println("Failed to load dependency entity for procedure GolfClubSandBulletHitsBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure GolfClubRangedBulletHitsBlock!");
+			System.err.println("Failed to load dependency x for procedure GolfClubSandBulletHitsBlock!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure GolfClubRangedBulletHitsBlock!");
+			System.err.println("Failed to load dependency y for procedure GolfClubSandBulletHitsBlock!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure GolfClubRangedBulletHitsBlock!");
+			System.err.println("Failed to load dependency z for procedure GolfClubSandBulletHitsBlock!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure GolfClubRangedBulletHitsBlock!");
+			System.err.println("Failed to load dependency world for procedure GolfClubSandBulletHitsBlock!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -72,10 +72,11 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					}
 				}
 			} else {
-				if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.SAND.getDefaultState().getBlock())) {
+				if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.GRASS_BLOCK.getDefaultState()
+						.getBlock())) {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
 					if (entity instanceof LivingEntity) {
-						ItemStack _setstack = new ItemStack(GolfClubSandItem.block, (int) (1));
+						ItemStack _setstack = new ItemStack(GolfClubRangedItem.block, (int) (1));
 						_setstack.setCount((int) 1);
 						((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
 						if (entity instanceof ServerPlayerEntity)
