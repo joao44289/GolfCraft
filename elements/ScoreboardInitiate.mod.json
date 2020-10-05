@@ -1,0 +1,7 @@
+{
+  "_fv": 10,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"179\" y=\"78\"><field name=\"trigger\">player_log_in</field><next><block type=\"entity_execute_command\"><value name=\"command\"><block type=\"text\"><field name=\"TEXT\">scoreboard objectives add Score dummy</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"/></value><next><block type=\"entity_execute_command\"><value name=\"command\"><block type=\"text\"><field name=\"TEXT\">scoreboard objectives setdisplay sidebar Score</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"/></value></block></next></block></next></block></xml>"
+  }
+}

@@ -176,6 +176,40 @@
           }
         ]
       }
+    },
+    {
+      "name": "ScoreboardInitiate",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "scoreboard_initiate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AddScore",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "add_score",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -207,7 +241,7 @@
   "workspaceSettings": {
     "modid": "golf_it",
     "modName": "GolfCraft",
-    "version": "1.0.0",
+    "version": "0.2",
     "description": "A bad attempt at a minecraft gold mod.",
     "author": "joao44289",
     "websiteURL": "https://github.com/joao44289/GolfCraft",

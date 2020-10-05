@@ -12,7 +12,7 @@
     "customModelName": "golfhole:default",
     "rotationMode": 0,
     "emissiveRendering": false,
-    "itemTexture": "golfhole",
+    "itemTexture": "",
     "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
@@ -62,7 +62,7 @@
       "value": "GROUND"
     },
     "luminance": 0.0,
-    "unbreakable": false,
+    "unbreakable": true,
     "breakHarvestLevel": 1,
     "spawnParticles": false,
     "particleToSpawn": {

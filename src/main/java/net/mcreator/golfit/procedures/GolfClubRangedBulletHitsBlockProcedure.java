@@ -101,12 +101,6 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
 				} else {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
 					{
 						Entity _ent = entity;
 						_ent.setPositionAndUpdate(x, (y + 1), z);
@@ -115,6 +109,12 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 									Collections.emptySet());
 						}
 					}
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockX", x);
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockY", y);
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockZ", z);
 					if (entity instanceof LivingEntity)
 						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
 					if (entity instanceof LivingEntity)

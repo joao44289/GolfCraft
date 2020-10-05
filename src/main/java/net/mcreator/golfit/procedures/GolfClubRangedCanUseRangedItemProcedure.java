@@ -10,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
+import java.util.HashMap;
 
 @GolfItModElements.ModElement.Tag
 public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.ModElement {
@@ -28,6 +29,11 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
+		{
+			Map<String, Object> $_dependencies = new HashMap<>();
+			$_dependencies.put("entity", entity);
+			AddScoreProcedure.executeProcedure($_dependencies);
+		}
 		world.setBlockState(new BlockPos(
 				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.getDouble("blockX")),
