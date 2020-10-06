@@ -210,11 +210,68 @@
           }
         ]
       }
+    },
+    {
+      "name": "Experiment",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "experiment",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
     {
       "name": "isWater",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    },
+    {
+      "name": "X",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "Y",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "Z",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "isExperiment",
       "type": "logic",
       "scope": "global",
       "value": "false"
@@ -241,7 +298,7 @@
   "workspaceSettings": {
     "modid": "golf_it",
     "modName": "GolfCraft",
-    "version": "0.2",
+    "version": "0.2.1",
     "description": "A bad attempt at a minecraft gold mod.",
     "author": "joao44289",
     "websiteURL": "https://github.com/joao44289/GolfCraft",

@@ -14,6 +14,7 @@ import net.minecraft.block.Blocks;
 import net.mcreator.golfit.item.GolfClubSandItem;
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
+import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -51,7 +52,31 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
+		GolfItModVariables.MapVariables.get(world).X = (double) (-1);
+		GolfItModVariables.MapVariables.get(world).syncData(world);
+		GolfItModVariables.isWater = (boolean) (false);
+		for (int index0 = 0; index0 < (int) (2); index0++) {
+			GolfItModVariables.MapVariables.get(world).Y = (double) (-1);
+			GolfItModVariables.MapVariables.get(world).syncData(world);
+			for (int index1 = 0; index1 < (int) (2); index1++) {
+				GolfItModVariables.MapVariables.get(world).Z = (double) (-1);
+				GolfItModVariables.MapVariables.get(world).syncData(world);
+				for (int index2 = 0; index2 < (int) (2); index2++) {
+					if (((world.getBlockState(new BlockPos((int) (x + (GolfItModVariables.MapVariables.get(world).X)),
+							(int) (y + (GolfItModVariables.MapVariables.get(world).Y)), (int) (z + (GolfItModVariables.MapVariables.get(world).Z)))))
+									.getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
+						GolfItModVariables.isWater = (boolean) (true);
+					}
+					GolfItModVariables.MapVariables.get(world).Z = (double) ((GolfItModVariables.MapVariables.get(world).Z) + 1);
+					GolfItModVariables.MapVariables.get(world).syncData(world);
+				}
+				GolfItModVariables.MapVariables.get(world).Y = (double) ((GolfItModVariables.MapVariables.get(world).Y) + 1);
+				GolfItModVariables.MapVariables.get(world).syncData(world);
+			}
+			GolfItModVariables.MapVariables.get(world).X = (double) ((GolfItModVariables.MapVariables.get(world).X) + 1);
+			GolfItModVariables.MapVariables.get(world).syncData(world);
+		}
+		if (((GolfItModVariables.isWater) == (true))) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			{
