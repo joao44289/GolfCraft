@@ -67,7 +67,7 @@ public class GolfClubSandItem extends GolfItModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(GolfItemGroup.tab).maxDamage(100));
+			super(new Item.Properties().group(GolfItemGroup.tab).maxStackSize(1));
 			setRegistryName("golf_club_sand");
 		}
 

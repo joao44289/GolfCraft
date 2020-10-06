@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "golf_it:items/club"
+    "layer0": "golf_it:items/golf_club_inverted"
   },
   "display": {
     "thirdperson_righthand": {
