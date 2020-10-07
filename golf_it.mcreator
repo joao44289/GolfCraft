@@ -210,6 +210,58 @@
           }
         ]
       }
+    },
+    {
+      "name": "Golfbag",
+      "type": "gui",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "golfbag"
+    },
+    {
+      "name": "Bag",
+      "type": "item",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bag"
+    },
+    {
+      "name": "BagItemInHandTick",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bag_item_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GiceclubGUI",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "giceclub_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -242,6 +294,12 @@
       "type": "logic",
       "scope": "global",
       "value": "false"
+    },
+    {
+      "name": "isBall",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -257,6 +315,7 @@
       "item.golf_it.golf_club_sand": "Golf Club Sand",
       "item.golf_it.golf_ball": "Golf Ball",
       "item.golf_it.golf_club_ranged": "Golf Club",
+      "item.golf_it.bag": "Bag",
       "block.golf_it.golf_flag": "Golf Flag",
       "block.golf_it.golf_ball_block": "Golf Ball Block",
       "block.golf_it.golf_hole": "Golf Hole"

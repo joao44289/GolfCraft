@@ -1,9 +1,9 @@
 {
-  "parent": "golf_it:custom/golfhole",
+  "parent": "golf_it:custom/golfhole_v2",
   "textures": {
-    "all": "golf_it:blocks/golfhole",
-    "particle": "golf_it:blocks/golfhole",
+    "all": "golf_it:blocks/greenhole",
+    "particle": "golf_it:blocks/greenhole",
     "0": "golf_it:blocks/greenhole",
-    "missing": "golf_it:blocks/greyhole"
+    "1": "golf_it:blocks/greyhole"
   }
 }

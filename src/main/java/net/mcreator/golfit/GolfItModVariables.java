@@ -22,6 +22,7 @@ public class GolfItModVariables {
 	}
 	public static boolean isWater = false;
 	public static boolean isExperiment = false;
+	public static boolean isBall = false;
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote) {

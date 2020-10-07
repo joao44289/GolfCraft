@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -34,6 +35,7 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 			$_dependencies.put("entity", entity);
 			AddScoreProcedure.executeProcedure($_dependencies);
 		}
+		GolfItModVariables.isBall = (boolean) (false);
 		world.setBlockState(new BlockPos(
 				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.getDouble("blockX")),

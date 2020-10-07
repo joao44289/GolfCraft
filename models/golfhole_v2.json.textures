@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "greenhole",
+        "1": "greyhole"
+      },
+      "name": "default"
+    }
+  }
+}

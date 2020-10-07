@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "brownpole",
+        "1": "redflag"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "parent": "golf_it:custom/golfflag",
+  "parent": "golf_it:custom/golfflag_v2",
   "textures": {
     "all": "golf_it:blocks/redflag",
     "particle": "golf_it:blocks/redflag",
