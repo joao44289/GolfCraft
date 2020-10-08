@@ -52,7 +52,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 		IWorld world = (IWorld) dependencies.get("world");
 		GolfItModVariables.MapVariables.get(world).X = (double) (-1);
 		GolfItModVariables.MapVariables.get(world).syncData(world);
-		GolfItModVariables.isWater = (boolean) (false);
+		GolfItModVariables.isHole = (boolean) (false);
 		for (int index0 = 0; index0 < (int) (2); index0++) {
 			GolfItModVariables.MapVariables.get(world).Y = (double) (-1);
 			GolfItModVariables.MapVariables.get(world).syncData(world);
@@ -63,7 +63,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					if (((world.getBlockState(new BlockPos((int) (x + (GolfItModVariables.MapVariables.get(world).X)),
 							(int) (y + (GolfItModVariables.MapVariables.get(world).Y)), (int) (z + (GolfItModVariables.MapVariables.get(world).Z)))))
 									.getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
-						GolfItModVariables.isWater = (boolean) (true);
+						GolfItModVariables.isHole = (boolean) (true);
 					}
 					GolfItModVariables.MapVariables.get(world).Z = (double) ((GolfItModVariables.MapVariables.get(world).Z) + 1);
 					GolfItModVariables.MapVariables.get(world).syncData(world);
@@ -74,8 +74,8 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 			GolfItModVariables.MapVariables.get(world).X = (double) ((GolfItModVariables.MapVariables.get(world).X) + 1);
 			GolfItModVariables.MapVariables.get(world).syncData(world);
 		}
-		if (((GolfItModVariables.isWater) == (true))) {
-			GolfItModVariables.isExperiment = (boolean) (false);
+		if (((GolfItModVariables.isHole) == (true))) {
+			GolfItModVariables.movement = (boolean) (false);
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			{
@@ -119,7 +119,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 									Collections.emptySet());
 						}
 					}
-					GolfItModVariables.isExperiment = (boolean) (true);
+					GolfItModVariables.movement = (boolean) (true);
 				} else {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
 					{
@@ -136,7 +136,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 							.putDouble("blockY", y);
 					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 							.putDouble("blockZ", z);
-					GolfItModVariables.isExperiment = (boolean) (true);
+					GolfItModVariables.movement = (boolean) (true);
 				}
 			}
 		}

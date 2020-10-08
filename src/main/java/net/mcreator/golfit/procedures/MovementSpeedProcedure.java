@@ -26,7 +26,7 @@ public class MovementSpeedProcedure extends GolfItModElements.ModElement {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((GolfItModVariables.isExperiment) == (true))) {
+		if (((GolfItModVariables.movement) == (true))) {
 			entity.setMotion(0, 0, 0);
 		}
 	}

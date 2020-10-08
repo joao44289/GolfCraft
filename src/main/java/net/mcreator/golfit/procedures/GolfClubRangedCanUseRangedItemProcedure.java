@@ -7,11 +7,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
-import java.util.HashMap;
 
 @GolfItModElements.ModElement.Tag
 public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.ModElement {
@@ -31,11 +29,12 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
 		{
-			Map<String, Object> $_dependencies = new HashMap<>();
-			$_dependencies.put("entity", entity);
-			AddScoreProcedure.executeProcedure($_dependencies);
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add @s Score 1");
+			}
 		}
-		GolfItModVariables.isBall = (boolean) (false);
 		world.setBlockState(new BlockPos(
 				(int) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.getDouble("blockX")),

@@ -169,23 +169,6 @@
       }
     },
     {
-      "name": "AddScore",
-      "type": "procedure",
-      "sortid": 18,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "add_score",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Golfbag",
       "type": "gui",
       "sortid": 19,
@@ -309,12 +292,6 @@
   ],
   "variable_elements": [
     {
-      "name": "isWater",
-      "type": "logic",
-      "scope": "global",
-      "value": "false"
-    },
-    {
       "name": "X",
       "type": "number",
       "scope": "map",
@@ -333,13 +310,13 @@
       "value": "0"
     },
     {
-      "name": "isExperiment",
+      "name": "isHole",
       "type": "logic",
       "scope": "global",
       "value": "false"
     },
     {
-      "name": "isBall",
+      "name": "movement",
       "type": "logic",
       "scope": "global",
       "value": "false"

@@ -25,7 +25,7 @@
     "onRangedItemUsed": {
       "name": "GolfClubRangedCanUseRangedItem"
     },
-    "bulletPower": 1.0,
+    "bulletPower": 0.7,
     "bulletDamage": 0.0,
     "bulletKnockback": 0,
     "bulletParticles": false,

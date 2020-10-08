@@ -20,9 +20,8 @@ public class GolfItModVariables {
 		elements.addNetworkMessage(WorldSavedDataSyncMessage.class, WorldSavedDataSyncMessage::buffer, WorldSavedDataSyncMessage::new,
 				WorldSavedDataSyncMessage::handler);
 	}
-	public static boolean isWater = false;
-	public static boolean isExperiment = false;
-	public static boolean isBall = false;
+	public static boolean isHole = false;
+	public static boolean movement = false;
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote) {
