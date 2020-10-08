@@ -10,7 +10,7 @@
     "textureBack": "",
     "renderType": 2,
     "customModelName": "golfflag_v2:default",
-    "rotationMode": 0,
+    "rotationMode": 2,
     "emissiveRendering": false,
     "itemTexture": "guigolfpole",
     "hasTransparency": true,

@@ -22,8 +22,14 @@
     "specialInfo": [],
     "hasGlow": false,
     "guiBoundTo": "Golfbag",
-    "inventorySize": 4,
+    "inventorySize": 3,
     "inventoryStackSize": 1,
+    "onRightClickedInAir": {
+      "name": "BagItemInHandTick"
+    },
+    "onRightClickedOnBlock": {
+      "name": "BagItemInHandTick"
+    },
     "onItemInUseTick": {
       "name": "BagItemInHandTick"
     }

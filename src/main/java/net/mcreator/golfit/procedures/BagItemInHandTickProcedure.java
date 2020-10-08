@@ -6,8 +6,9 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.golfit.item.WedgeClubItem;
+import net.mcreator.golfit.item.PutterClubItem;
 import net.mcreator.golfit.item.GolfClubRangedItem;
-import net.mcreator.golfit.item.GolfBallItem;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.function.Supplier;
@@ -42,9 +43,21 @@ public class BagItemInHandTickProcedure extends GolfItModElements.ModElement {
 			if (_current instanceof Supplier) {
 				Object invobj = ((Supplier) _current).get();
 				if (invobj instanceof Map) {
-					ItemStack _setstack = new ItemStack(GolfBallItem.block, (int) (1));
+					ItemStack _setstack = new ItemStack(WedgeClubItem.block, (int) (1));
 					_setstack.setCount((int) 1);
 					((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
+					_current.detectAndSendChanges();
+				}
+			}
+		}
+		if (entity instanceof PlayerEntity) {
+			Container _current = ((PlayerEntity) entity).openContainer;
+			if (_current instanceof Supplier) {
+				Object invobj = ((Supplier) _current).get();
+				if (invobj instanceof Map) {
+					ItemStack _setstack = new ItemStack(PutterClubItem.block, (int) (1));
+					_setstack.setCount((int) 1);
+					((Slot) ((Map) invobj).get((int) (2))).putStack(_setstack);
 					_current.detectAndSendChanges();
 				}
 			}

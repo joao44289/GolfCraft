@@ -3,7 +3,7 @@ loaderVersion="[31,)"
 
 [[mods]]
 modId="golf_it"
-version="0.3.1"
+version="0.3.2"
 displayName="GolfCraft"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://github.com/joao44289/GolfCraft"

@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "golf_club_inverted",
     "customModelName": "Normal",
-    "name": "Golf Club",
+    "name": "Iron",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:Golf"

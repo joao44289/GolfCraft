@@ -1,10 +1,12 @@
 {
   "itemGroup.tabgolf": "Golf It!",
-  "item.golf_it.golf_club_sand": "Golf Club Sand",
+  "item.golf_it.golf_club_sand": "Sand Club",
   "item.golf_it.golf_ball": "Golf Ball",
-  "item.golf_it.golf_club_ranged": "Golf Club",
+  "item.golf_it.golf_club_ranged": "Iron",
+  "item.golf_it.putter_club": "Putter",
   "item.golf_it.bag": "Bag",
   "block.golf_it.golf_flag": "Golf Flag",
+  "item.golf_it.wedge_club": "Wedge ",
   "block.golf_it.golf_ball_block": "Golf Ball Block",
   "block.golf_it.golf_hole": "Golf Hole"
 }

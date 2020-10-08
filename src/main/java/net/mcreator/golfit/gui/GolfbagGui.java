@@ -34,6 +34,8 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.golfit.procedures.GiveWedgeGuiProcedure;
+import net.mcreator.golfit.procedures.GivePutterGuiProcedure;
 import net.mcreator.golfit.procedures.GiceclubGUIProcedure;
 import net.mcreator.golfit.GolfItModElements;
 import net.mcreator.golfit.GolfItMod;
@@ -120,7 +122,7 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 61, 76) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 43, 30) {
 				@Override
 				public ItemStack onTake(PlayerEntity entity, ItemStack stack) {
 					ItemStack retval = super.onTake(entity, stack);
@@ -129,17 +131,37 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 				}
 
 				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
+				public void onSlotChange(ItemStack a, ItemStack b) {
+					super.onSlotChange(a, b);
+					GuiContainerMod.this.slotChanged(0, 2, b.getCount() - a.getCount());
 				}
-			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 80, 76) {
+
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 98, 76) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 79, 30) {
+				@Override
+				public ItemStack onTake(PlayerEntity entity, ItemStack stack) {
+					ItemStack retval = super.onTake(entity, stack);
+					GuiContainerMod.this.slotChanged(1, 1, 0);
+					return retval;
+				}
+
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return false;
+				}
+			}));
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 115, 30) {
+				@Override
+				public ItemStack onTake(PlayerEntity entity, ItemStack stack) {
+					ItemStack retval = super.onTake(entity, stack);
+					GuiContainerMod.this.slotChanged(2, 1, 0);
+					return retval;
+				}
+
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -149,9 +171,9 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 8 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 8 + 142));
+				this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -319,7 +341,7 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 			this.z = container.z;
 			this.entity = container.entity;
 			this.xSize = 176;
-			this.ySize = 150;
+			this.ySize = 166;
 		}
 
 		@Override
@@ -359,6 +381,10 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+			this.font.drawString("Iron", 40, 14, -11184811);
+			this.font.drawString("Wedge", 75, 14, -11184811);
+			this.font.drawString("Putter", 109, 14, -11184811);
+			this.font.drawString("Iventory", 6, 71, -11184811);
 		}
 
 		@Override
@@ -472,6 +498,28 @@ public class GolfbagGui extends GolfItModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				GiceclubGUIProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (slotID == 0 && changeType == 2) {
+			int amount = meta;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				GiceclubGUIProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (slotID == 1 && changeType == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				GiveWedgeGuiProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (slotID == 2 && changeType == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				GivePutterGuiProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

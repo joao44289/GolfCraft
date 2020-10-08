@@ -2,7 +2,7 @@
   "_fv": 10,
   "_type": "block",
   "definition": {
-    "texture": "greenhole",
+    "texture": "grass",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -14,7 +14,7 @@
     "emissiveRendering": false,
     "itemTexture": "golfhole",
     "hasTransparency": true,
-    "connectedSides": false,
+    "connectedSides": true,
     "transparencyType": "SOLID",
     "mx": 0.0,
     "my": 0.0,

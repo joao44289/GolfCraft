@@ -2,8 +2,8 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "greenhole",
-        "1": "greyhole"
+        "0": "greyhole",
+        "1": "green"
       },
       "name": "default"
     }

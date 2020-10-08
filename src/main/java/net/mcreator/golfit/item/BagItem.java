@@ -16,9 +16,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -101,7 +103,31 @@ public class BagItem extends GolfItModElements.ModElement {
 					buf.writeByte(hand == Hand.MAIN_HAND ? 0 : 1);
 				});
 			}
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				BagItemInHandTickProcedure.executeProcedure($_dependencies);
+			}
 			return ar;
+		}
+
+		@Override
+		public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
+			ActionResultType retval = super.onItemUseFirst(stack, context);
+			World world = context.getWorld();
+			BlockPos pos = context.getPos();
+			PlayerEntity entity = context.getPlayer();
+			Direction direction = context.getFace();
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			ItemStack itemstack = context.getItem();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				BagItemInHandTickProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 
 		@Override
@@ -158,7 +184,7 @@ public class BagItem extends GolfItModElements.ModElement {
 		}
 
 		private ItemStackHandler createItemHandler() {
-			return new ItemStackHandler(4) {
+			return new ItemStackHandler(3) {
 				@Override
 				public int getSlotLimit(int slot) {
 					return 1;

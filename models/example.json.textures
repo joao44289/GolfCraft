@@ -2,8 +2,9 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "greenhole",
-        "missing": "greyhole"
+        "0": "white",
+        "1": "redflag",
+        "2": "greyhole"
       },
       "name": "default"
     }

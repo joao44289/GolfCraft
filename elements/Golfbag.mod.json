@@ -4,7 +4,7 @@
   "definition": {
     "type": 1,
     "width": 352,
-    "height": 300,
+    "height": 332,
     "renderBgLayer": true,
     "doesPauseGame": true,
     "components": [
@@ -17,9 +17,12 @@
           "onTakenFromSlot": {
             "name": "GiceclubGUI"
           },
+          "onStackTransfer": {
+            "name": "GiceclubGUI"
+          },
           "name": "Slot #0",
-          "x": 372,
-          "y": 240
+          "x": 336,
+          "y": 132
         }
       },
       {
@@ -28,9 +31,12 @@
           "id": 1,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "GiveWedgeGui"
+          },
           "name": "Slot #1",
-          "x": 409,
-          "y": 241
+          "x": 408,
+          "y": 132
         }
       },
       {
@@ -39,9 +45,64 @@
           "id": 2,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "GivePutterGui"
+          },
           "name": "Slot #2",
-          "x": 446,
-          "y": 241
+          "x": 480,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Iron",
+          "color": {
+            "value": -11184811,
+            "falpha": 0.0
+          },
+          "name": "Iron",
+          "x": 330,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Wedge",
+          "color": {
+            "value": -11184811,
+            "falpha": 0.0
+          },
+          "name": "Wedge",
+          "x": 400,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Putter",
+          "color": {
+            "value": -11184811,
+            "falpha": 0.0
+          },
+          "name": "Putter",
+          "x": 469,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Iventory",
+          "color": {
+            "value": -11184811,
+            "falpha": 0.0
+          },
+          "name": "Iventory",
+          "x": 262,
+          "y": 215
         }
       }
     ]

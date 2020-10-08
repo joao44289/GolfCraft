@@ -3,8 +3,6 @@ package net.mcreator.golfit.procedures;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
@@ -77,6 +75,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 			GolfItModVariables.MapVariables.get(world).syncData(world);
 		}
 		if (((GolfItModVariables.isWater) == (true))) {
+			GolfItModVariables.isExperiment = (boolean) (false);
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			{
@@ -120,10 +119,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 									Collections.emptySet());
 						}
 					}
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
+					GolfItModVariables.isExperiment = (boolean) (true);
 				} else {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
 					{
@@ -140,10 +136,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 							.putDouble("blockY", y);
 					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 							.putDouble("blockZ", z);
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
+					GolfItModVariables.isExperiment = (boolean) (true);
 				}
 			}
 		}

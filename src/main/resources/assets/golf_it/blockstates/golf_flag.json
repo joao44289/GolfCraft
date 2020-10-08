@@ -1,7 +1,27 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "golf_it:block/golf_flag"
+    },
+    "facing=east": {
+      "model": "golf_it:block/golf_flag",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "golf_it:block/golf_flag",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "golf_it:block/golf_flag",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "golf_it:block/golf_flag",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "golf_it:block/golf_flag",
+      "x": 90
     }
   }
 }

@@ -7,25 +7,25 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.golfit.item.GolfClubRangedItem;
+import net.mcreator.golfit.item.WedgeClubItem;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
 
 @GolfItModElements.ModElement.Tag
-public class GiceclubGUIProcedure extends GolfItModElements.ModElement {
-	public GiceclubGUIProcedure(GolfItModElements instance) {
-		super(instance, 23);
+public class GiveWedgeGuiProcedure extends GolfItModElements.ModElement {
+	public GiveWedgeGuiProcedure(GolfItModElements instance) {
+		super(instance, 27);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure GiceclubGUI!");
+			System.err.println("Failed to load dependency entity for procedure GiveWedgeGui!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		{
-			final ItemStack _setstack = new ItemStack(GolfClubRangedItem.block, (int) (1));
+			final ItemStack _setstack = new ItemStack(WedgeClubItem.block, (int) (1));
 			final int _sltid = (int) (1);
 			_setstack.setCount((int) 1);
 			entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {

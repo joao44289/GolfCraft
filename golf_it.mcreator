@@ -92,32 +92,6 @@
       }
     },
     {
-      "name": "GiveClubCommandExecuted",
-      "type": "procedure",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "give_club_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "GiveClub",
-      "type": "command",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "give_club"
-    },
-    {
       "name": "GolfFlag",
       "type": "block",
       "sortid": 12,
@@ -262,6 +236,75 @@
           }
         ]
       }
+    },
+    {
+      "name": "MovementSpeed",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "movement_speed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WedgeClub",
+      "type": "gun",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wedge_club"
+    },
+    {
+      "name": "PutterClub",
+      "type": "gun",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "putter_club"
+    },
+    {
+      "name": "GiveWedgeGui",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "give_wedge_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GivePutterGui",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "give_putter_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -312,11 +355,13 @@
   "language_map": {
     "en_us": {
       "itemGroup.tabgolf": "Golf It!",
-      "item.golf_it.golf_club_sand": "Golf Club Sand",
+      "item.golf_it.golf_club_sand": "Sand Club",
       "item.golf_it.golf_ball": "Golf Ball",
-      "item.golf_it.golf_club_ranged": "Golf Club",
+      "item.golf_it.golf_club_ranged": "Iron",
+      "item.golf_it.putter_club": "Putter",
       "item.golf_it.bag": "Bag",
       "block.golf_it.golf_flag": "Golf Flag",
+      "item.golf_it.wedge_club": "Wedge ",
       "block.golf_it.golf_ball_block": "Golf Ball Block",
       "block.golf_it.golf_hole": "Golf Hole"
     }
@@ -324,7 +369,7 @@
   "workspaceSettings": {
     "modid": "golf_it",
     "modName": "GolfCraft",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "A bad attempt at a minecraft gold mod.",
     "author": "joao44289",
     "websiteURL": "https://github.com/joao44289/GolfCraft",

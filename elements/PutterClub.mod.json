@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "golf_club_inverted",
     "customModelName": "Normal",
-    "name": "Sand Club",
+    "name": "Putter",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:Golf"
@@ -25,7 +25,7 @@
     "onRangedItemUsed": {
       "name": "GolfClubRangedCanUseRangedItem"
     },
-    "bulletPower": 0.3,
+    "bulletPower": 1.0,
     "bulletDamage": 0.0,
     "bulletKnockback": 0,
     "bulletParticles": false,
@@ -36,7 +36,7 @@
     "bulletModel": "Default",
     "customBulletModelTexture": "",
     "onBulletHitsBlock": {
-      "name": "GolfClubSandBulletHitsBlock"
+      "name": "GolfClubRangedBulletHitsBlock"
     }
   }
 }

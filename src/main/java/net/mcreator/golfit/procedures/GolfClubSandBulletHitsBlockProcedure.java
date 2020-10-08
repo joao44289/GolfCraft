@@ -3,8 +3,6 @@ package net.mcreator.golfit.procedures;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
-import net.minecraft.potion.Effects;
-import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +12,7 @@ import net.minecraft.block.Blocks;
 import net.mcreator.golfit.item.GolfClubRangedItem;
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
+import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -51,7 +50,32 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
+		GolfItModVariables.MapVariables.get(world).X = (double) (-1);
+		GolfItModVariables.MapVariables.get(world).syncData(world);
+		GolfItModVariables.isWater = (boolean) (false);
+		for (int index0 = 0; index0 < (int) (2); index0++) {
+			GolfItModVariables.MapVariables.get(world).Y = (double) (-1);
+			GolfItModVariables.MapVariables.get(world).syncData(world);
+			for (int index1 = 0; index1 < (int) (2); index1++) {
+				GolfItModVariables.MapVariables.get(world).Z = (double) (-1);
+				GolfItModVariables.MapVariables.get(world).syncData(world);
+				for (int index2 = 0; index2 < (int) (2); index2++) {
+					if (((world.getBlockState(new BlockPos((int) (x + (GolfItModVariables.MapVariables.get(world).X)),
+							(int) (y + (GolfItModVariables.MapVariables.get(world).Y)), (int) (z + (GolfItModVariables.MapVariables.get(world).Z)))))
+									.getBlock() == GolfHoleBlock.block.getDefaultState().getBlock())) {
+						GolfItModVariables.isWater = (boolean) (true);
+					}
+					GolfItModVariables.MapVariables.get(world).Z = (double) ((GolfItModVariables.MapVariables.get(world).Z) + 1);
+					GolfItModVariables.MapVariables.get(world).syncData(world);
+				}
+				GolfItModVariables.MapVariables.get(world).Y = (double) ((GolfItModVariables.MapVariables.get(world).Y) + 1);
+				GolfItModVariables.MapVariables.get(world).syncData(world);
+			}
+			GolfItModVariables.MapVariables.get(world).X = (double) ((GolfItModVariables.MapVariables.get(world).X) + 1);
+			GolfItModVariables.MapVariables.get(world).syncData(world);
+		}
+		if (((GolfItModVariables.isWater) == (true))) {
+			GolfItModVariables.isExperiment = (boolean) (false);
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).clearActivePotions();
 			{
@@ -96,18 +120,9 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 									Collections.emptySet());
 						}
 					}
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
+					GolfItModVariables.isExperiment = (boolean) (true);
 				} else {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
 					{
 						Entity _ent = entity;
 						_ent.setPositionAndUpdate(x, (y + 1), z);
@@ -116,10 +131,13 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 									Collections.emptySet());
 						}
 					}
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 9999999, (int) 255));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, (int) 9999999, (int) 137));
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockX", x);
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockY", y);
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+							.putDouble("blockZ", z);
+					GolfItModVariables.isExperiment = (boolean) (true);
 				}
 			}
 		}
