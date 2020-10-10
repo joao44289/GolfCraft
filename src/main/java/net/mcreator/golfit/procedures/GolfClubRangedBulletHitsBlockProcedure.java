@@ -105,12 +105,6 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 						if (entity instanceof ServerPlayerEntity)
 							((ServerPlayerEntity) entity).inventory.markDirty();
 					}
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
 					{
 						Entity _ent = entity;
 						_ent.setPositionAndUpdate(x, (y + 1), z);
@@ -119,6 +113,9 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 									Collections.emptySet());
 						}
 					}
+					entity.getPersistentData().putDouble("blockX", x);
+					entity.getPersistentData().putDouble("blockY", y);
+					entity.getPersistentData().putDouble("blockZ", z);
 					GolfItModVariables.movement = (boolean) (true);
 				} else {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
@@ -130,12 +127,9 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 									Collections.emptySet());
 						}
 					}
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
+					entity.getPersistentData().putDouble("blockX", x);
+					entity.getPersistentData().putDouble("blockY", y);
+					entity.getPersistentData().putDouble("blockZ", z);
 					GolfItModVariables.movement = (boolean) (true);
 				}
 			}
