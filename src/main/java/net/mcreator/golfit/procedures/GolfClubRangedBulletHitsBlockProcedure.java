@@ -82,7 +82,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 				Entity _ent = entity;
 				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"/title @s actionbar {\"text\":\"Congratulations!\", \"bold\":true, \"color\":\"red\"}");
+							"title @s actionbar {\"text\":\"Congratulations!\", \"bold\":true, \"color\":\"red\"}");
 				}
 			}
 		} else {
@@ -92,7 +92,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 						_ent.world.getServer().getCommandManager().handleCommand(
 								_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-								"/title @s actionbar {\"text\":\"Try again\", \"bold\":true, \"color\":\"blue\"}");
+								"title @s actionbar {\"text\":\"Try again\", \"bold\":true, \"color\":\"blue\"}");
 					}
 				}
 			} else {
@@ -118,19 +118,37 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					entity.getPersistentData().putDouble("blockZ", z);
 					GolfItModVariables.movement = (boolean) (true);
 				} else {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
-					{
-						Entity _ent = entity;
-						_ent.setPositionAndUpdate(x, (y + 1), z);
-						if (_ent instanceof ServerPlayerEntity) {
-							((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
-									Collections.emptySet());
+					if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.LAVA.getDefaultState().getBlock())) {
+						{
+							Entity _ent = entity;
+							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+								_ent.world.getServer().getCommandManager().handleCommand(
+										_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+										"title @s actionbar {\"text\":\"You got burned\", \"bold\":true, \"color\":\"orange\"}");
+							}
 						}
+						{
+							Entity _ent = entity;
+							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+								_ent.world.getServer().getCommandManager().handleCommand(
+										_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "scoreboard players add @s Score 1");
+							}
+						}
+					} else {
+						world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
+						{
+							Entity _ent = entity;
+							_ent.setPositionAndUpdate(x, (y + 1), z);
+							if (_ent instanceof ServerPlayerEntity) {
+								((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
+										Collections.emptySet());
+							}
+						}
+						entity.getPersistentData().putDouble("blockX", x);
+						entity.getPersistentData().putDouble("blockY", y);
+						entity.getPersistentData().putDouble("blockZ", z);
+						GolfItModVariables.movement = (boolean) (true);
 					}
-					entity.getPersistentData().putDouble("blockX", x);
-					entity.getPersistentData().putDouble("blockY", y);
-					entity.getPersistentData().putDouble("blockZ", z);
-					GolfItModVariables.movement = (boolean) (true);
 				}
 			}
 		}
