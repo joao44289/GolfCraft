@@ -22,6 +22,9 @@ public class GolfItModVariables {
 	}
 	public static boolean isHole = false;
 	public static boolean movement = false;
+	public static boolean isIron = false;
+	public static boolean isWedge = false;
+	public static boolean isPutter = false;
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote) {

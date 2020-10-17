@@ -9,6 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.golfit.item.WedgeClubItem;
+import net.mcreator.golfit.item.PutterClubItem;
 import net.mcreator.golfit.item.GolfClubRangedItem;
 import net.mcreator.golfit.block.GolfHoleBlock;
 import net.mcreator.golfit.block.GolfBallBlockBlock;
@@ -96,57 +98,36 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 					}
 				}
 			} else {
-				if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.GRASS_BLOCK.getDefaultState()
-						.getBlock())) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
-					if (entity instanceof LivingEntity) {
-						ItemStack _setstack = new ItemStack(GolfClubRangedItem.block, (int) (1));
-						_setstack.setCount((int) 1);
-						((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
-						if (entity instanceof ServerPlayerEntity)
-							((ServerPlayerEntity) entity).inventory.markDirty();
-					}
-					entity.getPersistentData().putDouble("blockX", x);
-					entity.getPersistentData().putDouble("blockY", y);
-					entity.getPersistentData().putDouble("blockZ", z);
+				if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.LAVA.getDefaultState().getBlock())) {
 					{
 						Entity _ent = entity;
-						_ent.setPositionAndUpdate(x, (y + 1), z);
-						if (_ent instanceof ServerPlayerEntity) {
-							((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
-									Collections.emptySet());
+						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+							_ent.world.getServer().getCommandManager().handleCommand(
+									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+									"title @s actionbar {\"text\":\"You got burned\", \"bold\":true, \"color\":\"orange\"}");
 						}
 					}
-					GolfItModVariables.movement = (boolean) (true);
+					{
+						Entity _ent = entity;
+						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+							_ent.world.getServer().getCommandManager().handleCommand(
+									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "scoreboard players add @s Score 1");
+						}
+					}
 				} else {
-					if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.LAVA.getDefaultState().getBlock())) {
+					if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.PODZOL.getDefaultState()
+							.getBlock())) {
 						{
 							Entity _ent = entity;
 							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 								_ent.world.getServer().getCommandManager().handleCommand(
 										_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-										"title @s actionbar {\"text\":\"You got burned\", \"bold\":true, \"color\":\"orange\"}");
-							}
-						}
-						{
-							Entity _ent = entity;
-							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-								_ent.world.getServer().getCommandManager().handleCommand(
-										_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "scoreboard players add @s Score 1");
+										"title @s actionbar {\"text\":\"Out of Bounds\", \"bold\":true, \"color\":\"red\"}");
 							}
 						}
 					} else {
-						if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.PODZOL.getDefaultState()
+						if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.GRASS_BLOCK.getDefaultState()
 								.getBlock())) {
-							{
-								Entity _ent = entity;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager().handleCommand(
-											_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-											"title @s actionbar {\"text\":\"Out of Bounds\", \"bold\":true, \"color\":\"red\"}");
-								}
-							}
-						} else {
 							world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
 							{
 								Entity _ent = entity;
@@ -156,10 +137,42 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 											Collections.emptySet());
 								}
 							}
+							GolfItModVariables.movement = (boolean) (true);
 							entity.getPersistentData().putDouble("blockX", x);
 							entity.getPersistentData().putDouble("blockY", y);
 							entity.getPersistentData().putDouble("blockZ", z);
-							GolfItModVariables.movement = (boolean) (true);
+							if (((GolfItModVariables.isIron) == (true))) {
+								if (entity instanceof LivingEntity) {
+									ItemStack _setstack = new ItemStack(GolfClubRangedItem.block, (int) (1));
+									_setstack.setCount((int) 1);
+									((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+									if (entity instanceof ServerPlayerEntity)
+										((ServerPlayerEntity) entity).inventory.markDirty();
+								}
+								GolfItModVariables.isIron = (boolean) (false);
+							} else {
+								if (((GolfItModVariables.isWedge) == (true))) {
+									if (entity instanceof LivingEntity) {
+										ItemStack _setstack = new ItemStack(WedgeClubItem.block, (int) (1));
+										_setstack.setCount((int) 1);
+										((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+										if (entity instanceof ServerPlayerEntity)
+											((ServerPlayerEntity) entity).inventory.markDirty();
+									}
+									GolfItModVariables.isWedge = (boolean) (false);
+								} else {
+									if (((GolfItModVariables.isPutter) == (true))) {
+										if (entity instanceof LivingEntity) {
+											ItemStack _setstack = new ItemStack(PutterClubItem.block, (int) (1));
+											_setstack.setCount((int) 1);
+											((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+											if (entity instanceof ServerPlayerEntity)
+												((ServerPlayerEntity) entity).inventory.markDirty();
+										}
+										GolfItModVariables.isPutter = (boolean) (false);
+									}
+								}
+							}
 						}
 					}
 				}

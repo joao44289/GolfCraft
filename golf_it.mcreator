@@ -320,6 +320,24 @@
       "type": "logic",
       "scope": "global",
       "value": "false"
+    },
+    {
+      "name": "isIron",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    },
+    {
+      "name": "isWedge",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
+    },
+    {
+      "name": "isPutter",
+      "type": "logic",
+      "scope": "global",
+      "value": "false"
     }
   ],
   "sound_elements": [

@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.golfit.item.WedgeClubItem;
+import net.mcreator.golfit.GolfItModVariables;
 import net.mcreator.golfit.GolfItModElements;
 
 import java.util.Map;
@@ -34,6 +35,7 @@ public class GiveWedgeGuiProcedure extends GolfItModElements.ModElement {
 				}
 			});
 		}
+		GolfItModVariables.isWedge = (boolean) (true);
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).closeScreen();
 	}
