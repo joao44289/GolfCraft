@@ -173,6 +173,20 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 									}
 								}
 							}
+						} else {
+							world.setBlockState(new BlockPos((int) x, (int) y, (int) z), GolfBallBlockBlock.block.getDefaultState(), 3);
+							{
+								Entity _ent = entity;
+								_ent.setPositionAndUpdate(x, (y + 1), z);
+								if (_ent instanceof ServerPlayerEntity) {
+									((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
+											Collections.emptySet());
+								}
+							}
+							entity.getPersistentData().putDouble("blockX", x);
+							entity.getPersistentData().putDouble("blockY", y);
+							entity.getPersistentData().putDouble("blockZ", z);
+							GolfItModVariables.movement = (boolean) (true);
 						}
 					}
 				}
