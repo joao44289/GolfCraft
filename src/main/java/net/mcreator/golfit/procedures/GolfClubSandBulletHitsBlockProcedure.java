@@ -106,12 +106,9 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 						if (entity instanceof ServerPlayerEntity)
 							((ServerPlayerEntity) entity).inventory.markDirty();
 					}
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
+					entity.getPersistentData().putDouble("blockX", x);
+					entity.getPersistentData().putDouble("blockY", y);
+					entity.getPersistentData().putDouble("blockZ", z);
 					{
 						Entity _ent = entity;
 						_ent.setPositionAndUpdate(x, (y + 1), z);
@@ -131,12 +128,9 @@ public class GolfClubSandBulletHitsBlockProcedure extends GolfItModElements.ModE
 									Collections.emptySet());
 						}
 					}
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockX", x);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockY", y);
-					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-							.putDouble("blockZ", z);
+					entity.getPersistentData().putDouble("blockX", x);
+					entity.getPersistentData().putDouble("blockY", y);
+					entity.getPersistentData().putDouble("blockZ", z);
 					GolfItModVariables.movement = (boolean) (true);
 				}
 			}
