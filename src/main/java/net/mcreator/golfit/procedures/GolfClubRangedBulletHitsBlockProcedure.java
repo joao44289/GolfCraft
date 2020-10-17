@@ -135,7 +135,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 							}
 						}
 					} else {
-						if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Blocks.PODZOL.getDefaultState()
+						if (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.PODZOL.getDefaultState()
 								.getBlock())) {
 							{
 								Entity _ent = entity;
