@@ -49,7 +49,7 @@ public class BagItem extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:bag")
 	public static final Item block = null;
 	public BagItem(GolfItModElements instance) {
-		super(instance, 21);
+		super(instance, 1);
 	}
 
 	@Override

@@ -16,7 +16,7 @@ import java.util.Map;
 @GolfItModElements.ModElement.Tag
 public class GiveWedgeGuiProcedure extends GolfItModElements.ModElement {
 	public GiveWedgeGuiProcedure(GolfItModElements instance) {
-		super(instance, 27);
+		super(instance, 19);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

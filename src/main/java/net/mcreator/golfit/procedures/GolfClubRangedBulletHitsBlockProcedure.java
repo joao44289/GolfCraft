@@ -21,7 +21,7 @@ import java.util.Collections;
 @GolfItModElements.ModElement.Tag
 public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.ModElement {
 	public GolfClubRangedBulletHitsBlockProcedure(GolfItModElements instance) {
-		super(instance, 9);
+		super(instance, 11);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -12,7 +12,7 @@ import java.util.Map;
 @GolfItModElements.ModElement.Tag
 public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.ModElement {
 	public GolfClubRangedCanUseRangedItemProcedure(GolfItModElements instance) {
-		super(instance, 10);
+		super(instance, 12);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

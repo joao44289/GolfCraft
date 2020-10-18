@@ -48,7 +48,7 @@ public class GolfClubRangedItem extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:entitybulletgolf_club_ranged")
 	public static final EntityType arrow = null;
 	public GolfClubRangedItem(GolfItModElements instance) {
-		super(instance, 9);
+		super(instance, 5);
 	}
 
 	@Override

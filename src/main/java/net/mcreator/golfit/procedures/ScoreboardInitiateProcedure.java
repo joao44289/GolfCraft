@@ -14,7 +14,7 @@ import java.util.HashMap;
 @GolfItModElements.ModElement.Tag
 public class ScoreboardInitiateProcedure extends GolfItModElements.ModElement {
 	public ScoreboardInitiateProcedure(GolfItModElements instance) {
-		super(instance, 17);
+		super(instance, 14);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

@@ -16,7 +16,7 @@ import java.util.Map;
 @GolfItModElements.ModElement.Tag
 public class GiceclubGUIProcedure extends GolfItModElements.ModElement {
 	public GiceclubGUIProcedure(GolfItModElements instance) {
-		super(instance, 23);
+		super(instance, 17);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -16,7 +16,7 @@ import java.util.HashMap;
 @GolfItModElements.ModElement.Tag
 public class MovementSpeedProcedure extends GolfItModElements.ModElement {
 	public MovementSpeedProcedure(GolfItModElements instance) {
-		super(instance, 24);
+		super(instance, 18);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

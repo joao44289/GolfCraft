@@ -33,7 +33,7 @@ public class GolfBallBlockBlock extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:golf_ball_block")
 	public static final Block block = null;
 	public GolfBallBlockBlock(GolfItModElements instance) {
-		super(instance, 5);
+		super(instance, 7);
 	}
 
 	@Override

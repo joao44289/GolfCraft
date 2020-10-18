@@ -15,7 +15,7 @@ public class GolfBallItem extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:golf_ball")
 	public static final Item block = null;
 	public GolfBallItem(GolfItModElements instance) {
-		super(instance, 13);
+		super(instance, 6);
 	}
 
 	@Override

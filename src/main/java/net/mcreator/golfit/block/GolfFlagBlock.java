@@ -40,7 +40,7 @@ public class GolfFlagBlock extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:golf_flag")
 	public static final Block block = null;
 	public GolfFlagBlock(GolfItModElements instance) {
-		super(instance, 12);
+		super(instance, 9);
 	}
 
 	@Override

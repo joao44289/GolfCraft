@@ -48,7 +48,7 @@ public class WedgeClubItem extends GolfItModElements.ModElement {
 	@ObjectHolder("golf_it:entitybulletwedge_club")
 	public static final EntityType arrow = null;
 	public WedgeClubItem(GolfItModElements instance) {
-		super(instance, 25);
+		super(instance, 3);
 	}
 
 	@Override

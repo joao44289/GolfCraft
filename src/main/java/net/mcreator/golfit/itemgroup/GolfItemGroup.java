@@ -13,7 +13,7 @@ import net.mcreator.golfit.GolfItModElements;
 @GolfItModElements.ModElement.Tag
 public class GolfItemGroup extends GolfItModElements.ModElement {
 	public GolfItemGroup(GolfItModElements instance) {
-		super(instance, 2);
+		super(instance, 10);
 	}
 
 	@Override

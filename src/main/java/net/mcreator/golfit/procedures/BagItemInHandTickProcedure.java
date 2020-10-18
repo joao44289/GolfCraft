@@ -17,7 +17,7 @@ import java.util.Map;
 @GolfItModElements.ModElement.Tag
 public class BagItemInHandTickProcedure extends GolfItModElements.ModElement {
 	public BagItemInHandTickProcedure(GolfItModElements instance) {
-		super(instance, 22);
+		super(instance, 16);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
