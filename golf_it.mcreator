@@ -288,36 +288,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "GiveBagCommandExecuted",
-      "type": "procedure",
-      "sortid": 21,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "give_bag_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          }
-        ]
-      }
-    },
-    {
-      "name": "GiveBag",
-      "type": "command",
-      "sortid": 21,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "give_bag"
     }
   ],
   "variable_elements": [
@@ -394,7 +364,7 @@
   "workspaceSettings": {
     "modid": "golf_it",
     "modName": "GolfCraft",
-    "version": "0.5.1",
+    "version": "0.6",
     "description": "A bad attempt at a minecraft gold mod.",
     "author": "joao44289",
     "websiteURL": "https://github.com/joao44289/GolfCraft",

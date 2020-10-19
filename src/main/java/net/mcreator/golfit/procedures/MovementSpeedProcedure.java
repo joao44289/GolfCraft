@@ -5,6 +5,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.World;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.golfit.GolfItModVariables;
@@ -27,7 +28,15 @@ public class MovementSpeedProcedure extends GolfItModElements.ModElement {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((GolfItModVariables.movement) == (true))) {
-			entity.setMotion(0, 0, 0);
+			if (entity instanceof PlayerEntity) {
+				((PlayerEntity) entity).abilities.setWalkSpeed((float) 0);
+				((PlayerEntity) entity).sendPlayerAbilities();
+			}
+		} else {
+			if (entity instanceof PlayerEntity) {
+				((PlayerEntity) entity).abilities.setWalkSpeed((float) 0.1);
+				((PlayerEntity) entity).sendPlayerAbilities();
+			}
 		}
 	}
 

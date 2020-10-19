@@ -26,13 +26,6 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
-		{
-			Entity _ent = entity;
-			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"scoreboard players add @s Score 1");
-			}
-		}
 		world.setBlockState(new BlockPos((int) (entity.getPersistentData().getDouble("blockX")),
 				(int) (entity.getPersistentData().getDouble("blockY")), (int) (entity.getPersistentData().getDouble("blockZ"))),
 				Blocks.AIR.getDefaultState(), 3);

@@ -28,21 +28,56 @@ public class ScoreboardInitiateProcedure extends GolfItModElements.ModElement {
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"scoreboard players reset @s Score");
+						"scoreboard objectives remove Golf ");
 			}
 		}
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"scoreboard objectives add Score dummy");
+						"scoreboard objectives add Golf dummy {\"text\":\"GolfCraft\", \"color\":\"yellow\"} ");
 			}
 		}
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"scoreboard objectives setdisplay sidebar Score");
+						"scoreboard players add Hole: Golf 5");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add X Golf 4");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add ---------- Golf 3");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add Par: Golf 2");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add Y Golf 1");
+			}
+		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard objectives setdisplay sidebar Golf");
 			}
 		}
 	}
