@@ -29,5 +29,12 @@ public class GolfClubRangedCanUseRangedItemProcedure extends GolfItModElements.M
 		world.setBlockState(new BlockPos((int) (entity.getPersistentData().getDouble("blockX")),
 				(int) (entity.getPersistentData().getDouble("blockY")), (int) (entity.getPersistentData().getDouble("blockZ"))),
 				Blocks.AIR.getDefaultState(), 3);
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"scoreboard players add @s Score 1");
+			}
+		}
 	}
 }
