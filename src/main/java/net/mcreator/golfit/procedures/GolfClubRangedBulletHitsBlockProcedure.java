@@ -82,7 +82,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 				Entity _ent = entity;
 				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"title @s actionbar {\"text\":\"Congratulations!\", \"bold\":true, \"color\":\"red\"}");
+							"title @s title {\"text\":\"Congratulations!\",\"bold\":true,\"color\":\"dark_red\"}");
 				}
 			}
 			{
@@ -99,7 +99,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 						_ent.world.getServer().getCommandManager().handleCommand(
 								_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-								"title @s actionbar {\"text\":\"Try again\", \"bold\":true, \"color\":\"blue\"}");
+								"title @s title {\"text\":\"Your ball drowned!\",\"bold\":true,\"color\":\"blue\"}");
 					}
 				}
 			} else {
@@ -131,7 +131,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 								_ent.world.getServer().getCommandManager().handleCommand(
 										_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-										"title @s actionbar {\"text\":\"You got burned\", \"bold\":true, \"color\":\"orange\"}");
+										"title @s title {\"text\":\"You got burned!\",\"bold\":true,\"color\":\"gold\"}");
 							}
 						}
 						{
@@ -149,7 +149,7 @@ public class GolfClubRangedBulletHitsBlockProcedure extends GolfItModElements.Mo
 								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 									_ent.world.getServer().getCommandManager().handleCommand(
 											_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-											"title @s actionbar {\"text\":\"Out of Bounds\", \"bold\":true, \"color\":\"red\"}");
+											"title @s title {\"text\":\"Out of Bounds!\",\"bold\":true,\"color\":\"black\"}");
 								}
 							}
 						} else {

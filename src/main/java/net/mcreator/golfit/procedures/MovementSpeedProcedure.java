@@ -6,6 +6,7 @@ import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.golfit.GolfItModVariables;
@@ -32,11 +33,20 @@ public class MovementSpeedProcedure extends GolfItModElements.ModElement {
 				((PlayerEntity) entity).abilities.setWalkSpeed((float) 0);
 				((PlayerEntity) entity).sendPlayerAbilities();
 			}
+			{
+				Entity _ent = entity;
+				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+							"effect give @s jump_boost 99999 128 true");
+				}
+			}
 		} else {
 			if (entity instanceof PlayerEntity) {
 				((PlayerEntity) entity).abilities.setWalkSpeed((float) 0.1);
 				((PlayerEntity) entity).sendPlayerAbilities();
 			}
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).clearActivePotions();
 		}
 	}
 
